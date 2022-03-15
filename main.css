@@ -1,0 +1,136 @@
+*, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body, button {
+    color: white;
+}
+
+input {
+    border-radius: 1rem;
+}
+
+button {
+    border-radius: 1rem;
+    padding: 1em;
+    background-color: #3B4CCA;
+    color: #FFDE00;
+    border: 0;
+    margin-bottom: 2rem;
+}
+
+.logo-container p, .top-container, .form-container p {
+    font-size: 2rem;
+}
+
+.top-container, .form-container, .bottom-container {
+    padding: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #FFDE00;
+}
+
+/* Container */
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "left top"
+        "left form"
+        "left bottom";
+}
+
+.logo-container p {
+    display: inline;
+    text-align: center;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+/* Left Container */
+.left-container {
+    position: relative;
+    grid-area: left;
+}
+
+.logo-container {
+    background-color: rgba(0, 0, 0, 0.2);;
+    position: absolute;
+    top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1em;
+}
+
+/* Top Container */
+.top-container {
+    text-align: left;    
+    grid-area: top;
+    display: flex;
+    align-items: flex-end;
+    background-color: #CC0000;
+}
+
+/* Form Container */
+.form-container {
+    align-self: center;
+    grid-area: form;
+    background-color: #B3A125;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1em;
+    max-width: 75%;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
+    padding: 1rem;
+}
+
+/* Bottom Container */
+.bottom-container {
+    grid-area: bottom;
+    background-color: #CC0000;
+}
+
+@media screen and (max-width: 40em) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "left"
+            "top"
+            "form"
+            "bottom";
+    }
+
+    .container, p {
+        text-align: center;
+ 
+    }
+
+    .form {
+        flex-direction: column;
+        margin: auto;
+    }
+}
